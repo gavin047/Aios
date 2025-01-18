@@ -1,0 +1,420 @@
+body, html {
+    font-family: 'Rubik', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 0;
+    margin: 0;
+    background-color: white; /* Dark background color */
+}
+
+/* Navigation Styles */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #f0e8e8;
+    color: wheat;
+    padding: 20px;
+    z-index: 10;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.navTop {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Class for the logo */
+.Logo {
+    position: relative;
+    top: 10px;
+    left: 10px;
+    height: auto;
+}
+
+.Logo img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Prevent inline display issues */
+    position: absolute; /* Adjust positioning */
+    top: 10px; /* Adjust top positioning */
+    left: 10px; /* Adjust left positioning */
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    background-color: #333;
+    border-radius: 25px;
+    padding: 10px 20px;
+}
+
+.searchInput {
+    border: none;
+    background-color: transparent;
+    outline: none;
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+    width: 90%;
+}
+
+.searchInput::placeholder {
+    color: white;
+}
+
+.searchIcon {
+    margin-left: 10px;
+}
+
+.limitedoffer {
+    font-size: 1rem;
+    border-bottom: 2px solid green;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: #e0d85c;
+    font-weight: bold;
+    padding: 5px 10px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 5px;
+    transition: color 0.3s ease, transform 0.3s ease;
+    z-index: 20;
+}
+
+.limitedoffer:hover {
+    color: #fff;
+    transform: scale(1.1);
+}
+
+/* Video Section Styles */
+.video {
+    margin-top: 100px; /* Adjust as needed */
+    background-color: #111; /* Dark background color */
+    color: #fff; /* Light text color */
+    padding: 40px 0; /* Padding for content inside */
+    text-align: center; /* Center align content */
+}
+
+.videoContainer {
+    max-width: 1000px; /* Adjust maximum width */
+    margin: 0 auto; /* Center the container horizontally */
+    position: relative; /* Ensure relative positioning */
+}
+
+.videoContainer video {
+    width: 100%; /* Full width */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Prevent inline display issues */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow for video */
+}
+
+.navBottom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+.menuItem {
+    position: relative;
+    cursor: pointer;
+    color: #bbb;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+}
+
+.menuItem::before, .menuItem::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    transition: width 0.3s ease;
+}
+
+.menuItem::before {
+    top: 0;
+    left: 0;
+}
+
+.menuItem::after {
+    bottom: 0;
+    right: 0;
+}
+
+.menuItem:hover {
+    color: #fff;
+    transform: scale(1.05);
+}
+
+.menuItem:hover::before, .menuItem:hover::after {
+    width: 100%;
+}
+
+/* Slider Styles */
+.slider {
+    margin-top: 100px; /* Space for fixed navbar */
+    overflow: hidden;
+    background-color: transparent;
+}
+
+.sliderWrapper {
+    display: flex;
+    width: 400%; /* Adjusted to fit all slider items in one row */
+    animation: slide 10s infinite; /* Automatic sliding animation */
+}
+
+@keyframes slide {
+    0%, 100% {
+        transform: translateX(0%);
+    }
+    25% {
+        transform: translateX(-25%);
+    }
+    50% {
+        transform: translateX(-50%);
+    }
+    75% {
+        transform: translateX(-75%);
+    }
+}
+
+.sliderItem {
+    width: 100vw;
+    display: flex;
+    flex-direction: row-reverse; /* Reverse the row direction */
+    align-items: center;
+    justify-content: space-around; /* Distribute content */
+    position: relative;
+    flex-shrink: 0;
+    height: 80vh;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #f8e2d4; /* Background color adjusted */
+    transition: transform 0.5s ease-in-out;
+}
+
+.sliderImg {
+    max-width: 100%;
+    height: auto;
+    z-index: 1;
+    margin-bottom: 20px;
+}
+
+.sliderTitle {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #333;
+    z-index: 1;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.buyButton {
+    font-size: 1rem;
+    padding: 10px 20px;
+    font-weight: 400;
+    color: #333;
+    z-index: 1;
+    border: 1px solid gray;
+    background-color: #111;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.buyButton:hover {
+    background-color: white;
+    color: black;
+}
+
+.sliderPrice {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: #333;
+    z-index: 0;
+    margin-top: 30px;
+}
+
+/* Features Section Styles */
+.features {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 40px 0;
+    padding: 20px;
+    background-color: #f2f2f2;
+}
+
+.feature {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    width: 200px;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.feature:hover {
+    transform: translateY(-5px);
+}
+
+.featureImg {
+    max-width: 80%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.featureTitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.featureDesc {
+    font-size: 1rem;
+    color: #555;
+    margin-top: 5px;
+}
+
+/* Product Section Styles */
+.product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 40px 0;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.productTitle {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.productImg {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navTop {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .navBottom {
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+    }
+
+    .sliderWrapper {
+        width: 100%;
+    }
+
+    .sliderItem {
+        width: 100%;
+        height: auto; /* Adjusted height */
+        padding: 10px; /* Adjusted padding */
+        margin: 10px 0; /* Adjusted margin */
+        background-color: #f8e2d4; /* Background color adjusted */
+    }
+
+    .feature {
+        width: 100%;
+        max-width: 300px;
+    }
+   
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adjust minmax and gap as needed */
+    gap: 20px;
+    padding: 20px;
+    justify-items: center;
+}
+
+.card {
+    background-color: #f9f9f9; /* Light background color */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    height: 100%;
+    text-align: center;
+}
+
+.card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px 10px 0 0;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #333;
+    margin: 10px 0;
+}
+
+.card-description {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.card-footer {
+    margin-top: auto;
+}
+
+.buyButton {
+    background-color: #111;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.buyButton:hover {
+    background-color: #de7b17;
+    color: #111;
+}
+
+/* Hover Effect */
+.card:hover {
+    transform: translateY(-5px); /* Lift the card on hover */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Add a stronger shadow */
+}
+
+
