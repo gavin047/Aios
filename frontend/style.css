@@ -3,6 +3,7 @@ body, html {
     padding: 0;
     margin: 0;
     background-color: white; /* Dark background color */
+    text-decoration: none;
 }
 
 /* Navigation Styles */
@@ -18,30 +19,32 @@ nav {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-bottom: 50px;
 }
 
 .navTop {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    
 }
 
-/* Class for the logo */
+
 .Logo {
-    position: relative;
-    top: 10px;
-    left: 10px;
-    height: auto;
+    position: absolute;
+    top: 0px;  
+    left: 10px; 
+    height: auto; 
 }
 
 .Logo img {
-    max-width: 100%;
-    height: auto;
-    display: block; /* Prevent inline display issues */
-    position: absolute; /* Adjust positioning */
-    top: 10px; /* Adjust top positioning */
-    left: 10px; /* Adjust left positioning */
+    max-width: 100px; 
+    height: auto; 
+    display: block; 
+    margin-left: auto;
 }
+
+
 
 .search {
     display: flex;
@@ -171,7 +174,7 @@ nav {
 .sliderWrapper {
     display: flex;
     width: 400%; /* Adjusted to fit all slider items in one row */
-    animation: slide 10s infinite; /* Automatic sliding animation */
+    animation: slide 60s infinite; /* Automatic sliding animation */
 }
 
 @keyframes slide {
@@ -187,6 +190,9 @@ nav {
     75% {
         transform: translateX(-75%);
     }
+    100% {
+        transform: translateX(0%);
+    }
 }
 
 .sliderItem {
@@ -201,7 +207,7 @@ nav {
     padding: 20px;
     box-sizing: border-box;
     background-color: #f8e2d4; /* Background color adjusted */
-    transition: transform 0.5s ease-in-out;
+    transition: transform 0.6s ease-in-out;
 }
 
 .sliderImg {
@@ -415,6 +421,54 @@ nav {
 .card:hover {
     transform: translateY(-5px); /* Lift the card on hover */
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Add a stronger shadow */
+}
+.morePhonesButton {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.morePhonesButton:hover {
+    background-color: #0056b3;
+}
+.morePhonesButton:focus {
+    outline: none;
+}
+
+
+.footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 30px;
+}
+
+.footerContainer ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footerContainer ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+.footerContainer a {
+    color: #ffcc00;
+    text-decoration: none;
+}
+
+.footerContainer a:hover {
+    text-decoration: underline;
+}
+.footerContainer p {
+    margin-top: 10px;
 }
 
 
